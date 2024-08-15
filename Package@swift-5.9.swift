@@ -12,16 +12,16 @@ let package = Package(
         .watchOS(.v6)
     ],
     products: [
-        .library(name: "OpenTelemetryApi", type: .static, targets: ["OpenTelemetryApi"]),
-        .library(name: "OpenTelemetrySdk", type: .static, targets: ["OpenTelemetrySdk"]),
-        .library(name: "SwiftMetricsShim", type: .static, targets: ["SwiftMetricsShim"]),
-        .library(name: "StdoutExporter", type: .static, targets: ["StdoutExporter"]),
-        .library(name: "PrometheusExporter", type: .static, targets: ["PrometheusExporter"]),
-        .library(name: "OpenTelemetryProtocolExporter", type: .static, targets: ["OpenTelemetryProtocolExporterGrpc"]),
-        .library(name: "OpenTelemetryProtocolExporterHTTP", type: .static, targets: ["OpenTelemetryProtocolExporterHttp"]),
-        .library(name: "PersistenceExporter", type: .static, targets: ["PersistenceExporter"]),
-        .library(name: "InMemoryExporter", type: .static, targets: ["InMemoryExporter"]),
-        .library(name: "OTelSwiftLog", type: .static, targets: ["OTelSwiftLog"]),
+        .library(name: "OpenTelemetryApi", targets: ["OpenTelemetryApi"]),
+        .library(name: "OpenTelemetrySdk", targets: ["OpenTelemetrySdk"]),
+        .library(name: "SwiftMetricsShim", targets: ["SwiftMetricsShim"]),
+        .library(name: "StdoutExporter", targets: ["StdoutExporter"]),
+        .library(name: "PrometheusExporter", targets: ["PrometheusExporter"]),
+        .library(name: "OpenTelemetryProtocolExporter", targets: ["OpenTelemetryProtocolExporterGrpc"]),
+        .library(name: "OpenTelemetryProtocolExporterHTTP", targets: ["OpenTelemetryProtocolExporterHttp"]),
+        .library(name: "PersistenceExporter", targets: ["PersistenceExporter"]),
+        .library(name: "InMemoryExporter", targets: ["InMemoryExporter"]),
+        .library(name: "OTelSwiftLog", targets: ["OTelSwiftLog"]),
         .executable(name: "ConcurrencyContext", targets: ["ConcurrencyContext"]),
         .executable(name: "loggingTracer", targets: ["LoggingTracer"])
     ],
@@ -151,7 +151,7 @@ extension Package {
             .package(url: "https://github.com/undefinedlabs/opentracing-objc", from: "0.5.2")
         )
         self.products.append(
-            .library(name: "OpenTracingShim-experimental", type: .static, targets: ["OpenTracingShim"])
+            .library(name: "OpenTracingShim-experimental", targets: ["OpenTracingShim"])
         )
         self.targets.append(contentsOf: [
             .target(name: "OpenTracingShim",
@@ -173,16 +173,16 @@ extension Package {
             .package(url: "https://github.com/undefinedlabs/Thrift-Swift", from: "1.1.1")
         )
         self.products.append(contentsOf: [
-            .library(name: "JaegerExporter", type: .static, targets: ["JaegerExporter"]),
+            .library(name: "JaegerExporter", targets: ["JaegerExporter"]),
             .executable(name: "simpleExporter", targets: ["SimpleExporter"]),
-            .library(name: "NetworkStatus", type: .static, targets: ["NetworkStatus"]),
-            .library(name: "URLSessionInstrumentation", type: .static, targets: ["URLSessionInstrumentation"]),
-            .library(name: "ZipkinExporter", type: .static, targets: ["ZipkinExporter"]),
+            .library(name: "NetworkStatus", targets: ["NetworkStatus"]),
+            .library(name: "URLSessionInstrumentation", targets: ["URLSessionInstrumentation"]),
+            .library(name: "ZipkinExporter", targets: ["ZipkinExporter"]),
             .executable(name: "OTLPExporter", targets: ["OTLPExporter"]),
             .executable(name: "OTLPHTTPExporter", targets: ["OTLPHTTPExporter"]),
-            .library(name: "SignPostIntegration", type: .static, targets: ["SignPostIntegration"]),
-            .library(name: "ResourceExtension", type: .static, targets: ["ResourceExtension"]),
-            .library(name: "DatadogExporter", type: .static, targets: ["DatadogExporter"]),
+            .library(name: "SignPostIntegration", targets: ["SignPostIntegration"]),
+            .library(name: "ResourceExtension", targets: ["ResourceExtension"]),
+            .library(name: "DatadogExporter", targets: ["DatadogExporter"]),
         ])
         self.targets.append(contentsOf: [
             .target(name: "JaegerExporter",
