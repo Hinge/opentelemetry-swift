@@ -10,6 +10,7 @@ import OpenTelemetrySdk
 import FoundationNetworking
 #endif
 
+/// Simple Otlp Http log exporter that exports logs synchrously. Exports the given log records and returns export status after the network call is complete.
 public class SimpleHttpLogExporter: OtlpHttpExporterBase, LogRecordExporter {
     override public init(endpoint: URL = defaultOltpHttpLoggingEndpoint(),
                          config: OtlpConfiguration = OtlpConfiguration(),
